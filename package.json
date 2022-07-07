@@ -1,0 +1,25 @@
+{
+  "name": "portfolio2.0",
+  "version": "1.0.0",
+  "description": "My public portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwight9339/Portfolio2.0.git"
+  },
+  "author": "David White",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwight9339/Portfolio2.0/issues"
+  },
+  "homepage": "https://github.com/dwight9339/Portfolio2.0#readme",
+  "dependencies": {
+    "next": "^12.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
