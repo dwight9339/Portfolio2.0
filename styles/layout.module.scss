@@ -1,0 +1,7 @@
+@use "constants";
+
+.layout {
+  height: 100vh;
+  width: 100vw;
+  background-color: constants.$background-primary;
+}

@@ -1,0 +1,27 @@
+@use "constants";
+
+.header {
+  display: flex;
+  border-bottom: solid constants.$foreground-secondary 3px;
+}
+
+.logoContainer {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navItem {
+  margin: 0px 10px;
+}
+
+.navItem a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: large;
+  color: constants.$foreground-primary;
+}
