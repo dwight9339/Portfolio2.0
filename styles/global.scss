@@ -1,0 +1,11 @@
+@use "constants";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: constants.$background-primary;
+}
+
+* {
+  box-sizing: border-box;
+}

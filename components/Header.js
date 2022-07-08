@@ -19,7 +19,7 @@ export default () => {
       </div>
       <nav className={navbar}>
         <div className={navItem}>
-          <Link href="/test">
+          <Link href="/projects">
             <a>Projects</a>
           </Link>
         </div>

@@ -1,0 +1,20 @@
+@use "constants";
+
+.projectsListContainer {
+  margin-top: 20px;
+}
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectBlock {
+  border: solid constants.$foreground-primary 1px;
+  color: constants.$foreground-primary;
+  margin: 15px 0px;
+  width: 95%;
+  max-width: 700px;
+  height: 500px;
+}
