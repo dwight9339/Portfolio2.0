@@ -2,7 +2,7 @@
 
 .header {
   display: flex;
-  border-bottom: solid constants.$foreground-secondary 3px;
+  border-bottom: solid constants.$foreground-primary 3px;
 }
 
 .logoContainer {
@@ -24,4 +24,12 @@
   font-weight: bold;
   font-size: large;
   color: constants.$foreground-primary;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.navItem a:hover {
+  font-size: x-large;
+  color: constants.$foreground-secondary;
+  transform: rotate3d(1, 0, 1, 1turn);
 }
