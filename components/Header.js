@@ -2,24 +2,35 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   header,
-  headerSticky,
+  headerSlideIn,
+  headerSlideOut,
   logoContainer,
   navbar,
   navItem
 } from "../styles/header.module.scss";
 import useScrolling from "../hooks/useScrolling";
+import { useState, useEffect, useMemo } from "react";
 
 export default () => {
   const { scrollingUp, yOffset } = useScrolling();
+  const [headerShowing, setHeaderShowing] = useState(true);
+  const [headerClass, setHeaderClass] = useState(header);
+  const inStickyZone = useMemo(() => yOffset > 210, [yOffset]);
+  
+  useEffect(() => {
+    if (inStickyZone && headerShowing && !scrollingUp) {
+      setHeaderShowing(false);
+      setHeaderClass(headerSlideOut);
+    } else if (inStickyZone && !headerShowing && scrollingUp) {
+      setHeaderShowing(true);
+      setHeaderClass(headerSlideIn);
+    } 
+  }, [scrollingUp, headerShowing, inStickyZone]);
+
+  useEffect(() => console.log(`headerClass: ${headerClass}`), [headerClass]);
 
   return (
-    <header 
-      className={
-        yOffset > 500 && scrollingUp
-          ? headerSticky 
-          : header
-      }
-    >
+    <header className={headerClass}>
       <div className={logoContainer}>
         <Image 
           src="/images/mylogo.svg" 

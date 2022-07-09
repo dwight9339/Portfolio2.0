@@ -1,8 +1,48 @@
 @use "constants";
 
-.header {
+@keyframes slideIn {
+  from {
+    top: -300px;
+  }
+
+  to {
+    top: 0px;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    top: 0px;
+  }
+
+  to {
+    top: -300px;
+  }
+}
+
+%header-base {
+  width: 100%;
   display: flex;
   border-bottom: solid constants.$foreground-primary 3px;
+  background-color: constants.$background-primary;
+  position: fixed;
+  left: 0px;
+}
+
+.header {
+  @extend %header-base;
+  top: 0px;
+}
+
+.headerSlideIn {
+  @extend .header;
+  animation: slideIn 0.2s ease-in-out;
+}
+
+.headerSlideOut {
+  @extend %header-base;
+  top: -300px;
+  animation: slideOut 0.2s ease-in-out;
 }
 
 .logoContainer {
@@ -31,18 +71,4 @@
 .navItem a:hover {
   font-size: x-large;
   color: constants.$foreground-secondary;
-}
-
-// Sticky header
-.headerSticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-@keyframes slideDown {
-  from {
-
-  }
 }
