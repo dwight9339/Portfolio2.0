@@ -27,8 +27,6 @@ export default () => {
     } 
   }, [scrollingUp, headerShowing, inStickyZone]);
 
-  useEffect(() => console.log(`headerClass: ${headerClass}`), [headerClass]);
-
   return (
     <header className={headerClass}>
       <div className={logoContainer}>
