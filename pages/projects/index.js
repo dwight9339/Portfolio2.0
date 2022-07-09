@@ -8,8 +8,6 @@ import {
 } from "../../styles/projectsPage.module.scss";
 
 export default ({ projects }) => {
-  console.log(`projects: ${JSON.stringify(projects)}`);
-
   return (
     <div className={projectsListContainer}>
       <Head>
