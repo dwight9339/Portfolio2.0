@@ -2,14 +2,24 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   header,
+  headerSticky,
   logoContainer,
   navbar,
   navItem
 } from "../styles/header.module.scss";
+import useScrolling from "../hooks/useScrolling";
 
 export default () => {
+  const { scrollingUp, yOffset } = useScrolling();
+
   return (
-    <header className={header}>
+    <header 
+      className={
+        yOffset > 500 && scrollingUp
+          ? headerSticky 
+          : header
+      }
+    >
       <div className={logoContainer}>
         <Image 
           src="/images/mylogo.svg" 
