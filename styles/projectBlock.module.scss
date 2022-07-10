@@ -1,0 +1,18 @@
+@use "constants";
+
+.projectBlock {
+  border: solid constants.$foreground-primary 1px;
+  color: constants.$foreground-primary;
+  margin: 15px 0px;
+  width: 95%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 32px;
+}

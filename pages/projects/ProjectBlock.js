@@ -1,9 +1,14 @@
-import { projectBlock } from "../../styles/projectsPage.module.scss";
+import { 
+  projectBlock,
+  title
+} from "../../styles/projectBlock.module.scss";
+import SlideShow from "../../components/SlideShow";
 
 export default ({ project }) => {
   return (
     <div className={projectBlock}>
-      <p>{project.title}</p>
+      <p className={title}>{project.title}</p>
+      <SlideShow slides={project.imageUrls} />
     </div>
   )
 }
