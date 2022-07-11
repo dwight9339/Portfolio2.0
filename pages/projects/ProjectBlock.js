@@ -12,7 +12,7 @@ export default ({ project }) => {
   return (
     <div 
       className={projectBlock}
-      onClick={() => router.push(`/projects/${project.title}`)}
+      onClick={() => router.push(`/projects/${encodeURIComponent(project.title)}`)}
     >
       <p className={title}>{project.title}</p>
       <p className={tagline}>{project.tagline}</p>

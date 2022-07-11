@@ -1,18 +1,16 @@
 @use "constants";
+@use "snippets";
 
 .projectBlock {
+  @include snippets.centeredColumn;
+  @include snippets.card;
   border: solid constants.$foreground-primary 1px;
   color: constants.$foreground-primary;
   margin: 15px 0px;
   width: 95%;
   max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding-bottom: 30px;
   cursor: pointer;
-  border-radius: 5% 2%;
-  box-shadow: 0px 5px 50px 10px constants.$background-secondary, 0px 0px 5px 2px constants.$foreground-secondary;
 }
 
 .title {
