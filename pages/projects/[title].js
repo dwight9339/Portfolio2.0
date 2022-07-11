@@ -11,8 +11,8 @@ import {
   linksCard,
   stackItemsContainer,
   slideshowContainer
-} from "../../styles/projectPage.module.scss";
-import SlideShow from "../../components/SlideShow";
+} from "styles/projectPage.module.scss";
+import SlideShow from "components/SlideShow";
 
 export default ({ project }) => {
   return (

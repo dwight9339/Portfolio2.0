@@ -2,8 +2,8 @@ import {
   projectBlock,
   title,
   tagline
-} from "../../styles/projectBlock.module.scss";
-import SlideShow from "../../components/SlideShow";
+} from "styles/projectBlock.module.scss";
+import SlideShow from "components/SlideShow";
 import { useRouter } from "next/router";
 
 export default ({ project }) => {

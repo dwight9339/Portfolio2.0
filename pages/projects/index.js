@@ -5,7 +5,7 @@ import path from 'path'
 import { 
   projectsListContainer,
   projectsList  
-} from "../../styles/projectsPage.module.scss";
+} from "styles/projectsPage.module.scss";
 
 export default ({ projects }) => {
   return (
