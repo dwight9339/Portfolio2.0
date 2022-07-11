@@ -4,7 +4,6 @@
 .projectBlock {
   @include snippets.centeredColumn;
   @include snippets.card;
-  border: solid constants.$foreground-primary 1px;
   color: constants.$foreground-primary;
   margin: 15px 0px;
   width: 95%;
