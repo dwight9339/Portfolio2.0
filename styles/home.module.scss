@@ -1,0 +1,14 @@
+@use "constants";
+@use "snippets";
+
+.container {
+  @include snippets.centeredColumn;
+}
+
+.introCard {
+  @include snippets.card;
+  @include snippets.centeredColumn;
+  margin-top: 35px;
+  width: 95%;
+  max-width: 900px;
+}

@@ -1,7 +1,9 @@
-export default () => {
+import Home from "components/Home";
+
+const HomePage = () => {
   return (
-    <h1> 
-      This is your app. It's catchy, you like it.
-    </h1>
+    <Home />
   );
 }
+
+export default HomePage;
