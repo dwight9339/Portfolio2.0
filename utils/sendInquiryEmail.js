@@ -1,6 +1,6 @@
 import { createTransport } from "nodemailer";
 
-const sendInquiryEmail = (visitorMessage) => {
+const sendInquiryEmail = async (visitorMessage) => {
   const {
     INQUIRY_EMAIL_SERVICE,
     INQUIRY_EMAIL_FROM,
