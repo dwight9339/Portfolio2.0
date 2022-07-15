@@ -41,6 +41,7 @@ const ProjectPage = ({ project }) => {
             src="/images/go_icon.svg"
             width="40px"
             height="40px"
+            alt="Arrow icon. Click to visit app page"
           />
           <p>Go to app</p>
         </a>
@@ -49,6 +50,7 @@ const ProjectPage = ({ project }) => {
             src="/images/github_logo_small.svg"
             width="40px"
             height="40px"
+            alt="Github logo icon. Click to see code on GitHub"
           />
           <p>See the code</p>
         </a>
