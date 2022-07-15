@@ -76,12 +76,13 @@ export const getStaticProps = async({ params }) => {
   const dataFilePath = path.join(process.cwd(), "/pages/projects/projects.json");
   const rawData = await fsPromises.readFile(dataFilePath);
   const projects = JSON.parse(rawData);
+  const project = projects.find((project) => {
+    return project.title === decodeURIComponent(params.title);
+  });
 
   return {
     props: {
-      project: projects.find((project) => {
-        return project.title === decodeURIComponent(params.title);
-      })
+      project
     }
   };
 }
