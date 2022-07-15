@@ -11,7 +11,7 @@ import {
 import useScrolling from "../hooks/useScrolling";
 import { useState, useEffect, useMemo } from "react";
 
-export default () => {
+const Header = () => {
   const { scrollingUp, yOffset } = useScrolling();
   const [headerShowing, setHeaderShowing] = useState(true);
   const [headerClass, setHeaderClass] = useState(header);
@@ -43,17 +43,17 @@ export default () => {
           </Link>
         </div>
         <div className={navItem}>
-          <Link href="/test">
+          <Link href="">
             <a>Gallery</a>
           </Link>
         </div>
         <div className={navItem}>
-          <Link href="/test">
+          <Link href="">
             <a>About</a>
           </Link>
         </div>
         <div className={navItem}>
-          <Link href="/test">
+          <Link href="">
             <a>Contact</a>
           </Link>
         </div>
@@ -61,3 +61,5 @@ export default () => {
     </header>
   )
 }
+
+export default Header;

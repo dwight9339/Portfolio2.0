@@ -1,4 +1,4 @@
-export default ({ slides }) => {
+const SlideShow = ({ slides }) => {
   return (
     <div
       style={{
@@ -9,3 +9,5 @@ export default ({ slides }) => {
     ></div>
   )
 }
+
+export default SlideShow;

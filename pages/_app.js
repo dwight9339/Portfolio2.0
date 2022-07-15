@@ -1,10 +1,12 @@
 import "styles/global.scss";
 import Layout from "components/Layout";
 
-export default ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }) => {
   return (
     <Layout>
       <Component {...pageProps} />  
     </Layout>
   );
 }
+
+export default MyApp;

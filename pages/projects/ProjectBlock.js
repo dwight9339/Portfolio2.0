@@ -6,7 +6,7 @@ import {
 import SlideShow from "components/SlideShow";
 import { useRouter } from "next/router";
 
-export default ({ project }) => {
+const ProjectBlock = ({ project }) => {
   const router = useRouter();
 
   return (
@@ -20,3 +20,5 @@ export default ({ project }) => {
     </div>
   )
 }
+
+export default ProjectBlock;

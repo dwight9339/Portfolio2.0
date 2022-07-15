@@ -14,7 +14,7 @@ import {
 } from "styles/projectPage.module.scss";
 import SlideShow from "components/SlideShow";
 
-export default ({ project }) => {
+const ProjectPage = ({ project }) => {
   return (
     <div className={projectPage}>
       <Head>
@@ -85,3 +85,5 @@ export const getStaticProps = async({ params }) => {
     }
   };
 }
+
+export default ProjectPage;
