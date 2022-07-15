@@ -7,7 +7,7 @@ import {
   projectsList  
 } from "styles/projectsPage.module.scss";
 
-export default ({ projects }) => {
+const ProjectsPage = ({ projects }) => {
   return (
     <div className={projectsListContainer}>
       <Head>
@@ -33,3 +33,5 @@ export const getStaticProps = async () => {
     }
   }
 }
+
+export default ProjectsPage;

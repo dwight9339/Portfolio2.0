@@ -14,7 +14,7 @@ import {
 } from "styles/projectPage.module.scss";
 import SlideShow from "components/SlideShow";
 
-export default ({ project }) => {
+const ProjectPage = ({ project }) => {
   return (
     <div className={projectPage}>
       <Head>
@@ -41,6 +41,7 @@ export default ({ project }) => {
             src="/images/go_icon.svg"
             width="40px"
             height="40px"
+            alt="Arrow icon. Click to visit app page"
           />
           <p>Go to app</p>
         </a>
@@ -49,6 +50,7 @@ export default ({ project }) => {
             src="/images/github_logo_small.svg"
             width="40px"
             height="40px"
+            alt="Github logo icon. Click to see code on GitHub"
           />
           <p>See the code</p>
         </a>
@@ -76,12 +78,15 @@ export const getStaticProps = async({ params }) => {
   const dataFilePath = path.join(process.cwd(), "/pages/projects/projects.json");
   const rawData = await fsPromises.readFile(dataFilePath);
   const projects = JSON.parse(rawData);
+  const project = projects.find((project) => {
+    return project.title === decodeURIComponent(params.title);
+  });
 
   return {
     props: {
-      project: projects.find((project) => {
-        return project.title === decodeURIComponent(params.title);
-      })
+      project
     }
   };
 }
+
+export default ProjectPage;

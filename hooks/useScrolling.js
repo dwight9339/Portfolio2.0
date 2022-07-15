@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default () => {
+const useScrolling = () => {
   let prevScroll;
   if (process.browser) {
     prevScroll = window.pageYOffset
@@ -29,3 +29,5 @@ export default () => {
     yOffset
   }
 }
+
+export default useScrolling;
