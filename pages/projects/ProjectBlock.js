@@ -7,6 +7,7 @@ import SlideShow from "components/SlideShow";
 import { useRouter } from "next/router";
 
 const ProjectBlock = ({ project }) => {
+  if (!project) return null;
   const router = useRouter();
 
   return (
