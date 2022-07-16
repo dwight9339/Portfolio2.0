@@ -34,7 +34,7 @@ const Contact = () => {
             className={field}
           >
             <label 
-              for="name"
+              htmlFor="name"
               className={fieldLabel}
             >Name</label>
             <input
@@ -47,7 +47,7 @@ const Contact = () => {
             className={field}
           >
             <label 
-              for="email"
+              htmlFor="email"
               className={fieldLabel}
             >Email</label>
             <input
@@ -57,7 +57,7 @@ const Contact = () => {
             ></input>
           </div>
           <label 
-            for="message"
+            htmlFor="message"
             className={messageFieldLabel}
           >
             Message
