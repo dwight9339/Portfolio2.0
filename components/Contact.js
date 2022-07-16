@@ -6,11 +6,25 @@ import {
   submitButton,
   fieldLabel,
   messageFieldLabel,
-  field
+  field,
+  myMessage,
+  messageFade
 } from "styles/contact.module.scss";
+import { useState } from "react";
 
 const Contact = () => {
+  const [messageClass, setMessageClass] = useState();
+  const [message, setMessage] = useState("");
+  const [submitDisabled, setSubmitDisabled] = useState(false);
+
+  const showMessage = (msg) => {
+    setMessageClass(myMessage);
+    setMessage(msg);
+    setTimeout(() => setMessageClass(messageFade), 2000);
+  }
+
   const handleSubmit = async (e) => {
+    setSubmitDisabled(true);
     e.preventDefault();
     const { name, email, message } = e.target.elements;
     try {
@@ -20,14 +34,20 @@ const Contact = () => {
         message: message.value
       });
       e.target.reset();
+      showMessage("Message sent");
     } catch(err) {
       console.error(err);
+      showMessage("Unable to send message");
+    } finally {
+      setSubmitDisabled(false);
     }
-    
   }
 
   return (
     <div className={container}>
+      <div className={messageClass}>
+        <p>{message}</p>
+      </div>
       <div className={formCard}>
         <h1>Contact me</h1>
         <form onSubmit={handleSubmit} className={form}>
@@ -78,6 +98,7 @@ const Contact = () => {
             type="submit" 
             value="Submit" 
             className={submitButton}
+            disabled={submitDisabled}
           />
         </form>
       </div>

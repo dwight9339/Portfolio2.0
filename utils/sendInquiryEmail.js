@@ -29,17 +29,12 @@ const sendInquiryEmail = async ({
     }
   });
 
-  try {
-    const result = await transporter.sendMail({
-      from: INQUIRY_EMAIL_FROM,
-      to: INQUIRY_EMAIL_TO,
-      subject: "Portfolio Inquiry",
-      text: emailBody
-    });
-  } catch(err) {
-    console.error(err);
-  }
-  
+  await transporter.sendMail({
+    from: INQUIRY_EMAIL_FROM,
+    to: INQUIRY_EMAIL_TO,
+    subject: "Portfolio Inquiry",
+    text: emailBody
+  });
 }
 
 export default sendInquiryEmail;

@@ -50,3 +50,39 @@
   @extend %submitButton-base;
   background-color: constants.$background-secondary;
 }
+
+%message-base {
+  position: fixed;
+  @media(max-width: 800px) {
+    top: 200px;
+  }
+  @media(min-width: 801px) {
+    top: 160px;
+  }
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 7px;
+  border-radius: 5%;
+  color: constants.$background-primary;
+}
+
+.myMessage {
+  @extend %message-base;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1.0;
+  }
+
+  to {
+    opacity: 0.0;
+  }
+}
+
+.messageFade {
+  @extend %message-base;
+  opacity: 0.0;
+  animation: fadeOut 1s linear;
+}
