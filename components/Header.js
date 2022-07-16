@@ -33,7 +33,7 @@ const Header = () => {
         <Image 
           src="/images/mylogo.svg" 
           width="200px"
-          height="200px"
+          height="100px"
           alt="David White logo"
         />  
       </div>
