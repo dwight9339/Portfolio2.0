@@ -1,0 +1,52 @@
+@use "constants";
+@use "snippets";
+
+.container {
+  @include snippets.centeredColumn;
+}
+
+.formCard {
+  @include snippets.card;
+  @include snippets.centeredColumn;
+  margin-top: 35px;
+  padding: 0px 20px 25px 20px;
+  width: 95%;
+  max-width: 400px;
+}
+
+.form {
+  @include snippets.centeredColumn;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.fieldLabel {
+  margin-right: 10px;
+}
+
+.messageFieldLabel {
+  align-self: flex-start;
+  margin-bottom: 5px;
+}
+
+%submitButton-base {
+  margin-top: 10px;
+  align-self: flex-start;
+  width: 60px;
+  height: 26px;
+  color: constants.$foreground-primary;
+  border: solid constants.$foreground-primary 2px;
+  border-radius: 3px;
+}
+
+.submitButton {
+  @extend %submitButton-base;
+  background-color: constants.$background-primary;
+}
+
+.submitButton:hover {
+  @extend %submitButton-base;
+  background-color: constants.$background-secondary;
+}
