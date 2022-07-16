@@ -15,7 +15,7 @@ const Header = () => {
   const { scrollingUp, yOffset } = useScrolling();
   const [headerShowing, setHeaderShowing] = useState(true);
   const [headerClass, setHeaderClass] = useState(header);
-  const inStickyZone = useMemo(() => yOffset > 210, [yOffset]);
+  const inStickyZone = useMemo(() => yOffset > 10, [yOffset]);
   
   useEffect(() => {
     if (inStickyZone && headerShowing && !scrollingUp) {
