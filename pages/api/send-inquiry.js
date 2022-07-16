@@ -1,10 +1,8 @@
 import sendInquiryEmail from "utils/sendInquiryEmail";
 
 const sendInquiry = async (req, res) => {
-  const { message } = req.body;
-
   try {
-    await sendInquiryEmail(message);
+    await sendInquiryEmail(req.body);
     res.status(200).send();
   } catch(err) {
     console.error(err);

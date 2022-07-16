@@ -1,6 +1,20 @@
 import { createTransport } from "nodemailer";
 
-const sendInquiryEmail = async (visitorMessage) => {
+const sendInquiryEmail = async ({
+  name,
+  email,
+  message
+}) => {
+  const emailBody = `
+    New contact form entry from: ${name}
+
+    Reply to email: ${email}
+
+    Message:
+    
+    ${message}
+  `;
+
   const {
     INQUIRY_EMAIL_SERVICE,
     INQUIRY_EMAIL_FROM,
@@ -20,7 +34,7 @@ const sendInquiryEmail = async (visitorMessage) => {
       from: INQUIRY_EMAIL_FROM,
       to: INQUIRY_EMAIL_TO,
       subject: "Portfolio Inquiry",
-      text: visitorMessage
+      text: emailBody
     });
   } catch(err) {
     console.error(err);
