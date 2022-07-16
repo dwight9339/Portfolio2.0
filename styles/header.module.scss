@@ -43,7 +43,14 @@
 
 .headerSlideOut {
   @extend %header-base;
-  top: -300px;
+  @media(max-width: 800px) {
+    flex-direction: column;
+    top: -355px;
+  }
+  @media(min-width: 801px) {
+    top: -210px;
+  }
+  
   animation: slideOut 0.2s ease-in-out;
 }
 
