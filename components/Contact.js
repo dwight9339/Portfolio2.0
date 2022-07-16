@@ -19,6 +19,7 @@ const Contact = () => {
         email: email.value,
         message: message.value
       });
+      e.target.reset();
     } catch(err) {
       console.error(err);
     }
@@ -41,6 +42,7 @@ const Contact = () => {
               type="text"
               name="name"
               size="30"
+              required
             ></input>
           </div>
           <div
@@ -51,9 +53,10 @@ const Contact = () => {
               className={fieldLabel}
             >Email</label>
             <input
-              type="text"
+              type="email"
               name="email"
               size="30"
+              required
             ></input>
           </div>
           <label 
@@ -64,6 +67,7 @@ const Contact = () => {
           </label>
           <textarea
             name="message"
+            required
             style={{
               width: "300px",
               height: "200px"
