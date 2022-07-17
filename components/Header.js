@@ -30,12 +30,16 @@ const Header = () => {
   return (
     <header className={headerClass}>
       <div className={logoContainer}>
-        <Image 
-          src="/images/mylogo.svg" 
-          width="200px"
-          height="100px"
-          alt="David White logo"
-        />  
+        <Link href="/">
+          <a>
+            <Image 
+              src="/images/mylogo.svg" 
+              width="200px"
+              height="100px"
+              alt="David White logo"
+            />
+          </a>
+        </Link>  
       </div>
       <nav className={navbar}>
         <div className={navItem}>
