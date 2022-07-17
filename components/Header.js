@@ -48,12 +48,12 @@ const Header = () => {
           </Link>
         </div>
         <div className={navItem}>
-          <Link href="">
+          <Link href="/gallery">
             <a>Gallery</a>
           </Link>
         </div>
         <div className={navItem}>
-          <Link href="">
+          <Link href="/about">
             <a>About</a>
           </Link>
         </div>
