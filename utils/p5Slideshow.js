@@ -28,7 +28,6 @@ class Reel {
   update() {
     this.startIndex = this.decrementIndex(this.startIndex);
     this.endIndex = this.decrementIndex(this.endIndex);;
-    console.log(this.startIndex, this.endIndex);
   }
 }
 
