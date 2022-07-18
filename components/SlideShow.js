@@ -8,8 +8,8 @@ const Sketch = dynamic(async () => {
   ssr: false
 });
 
-const SlideShow = ({ imageUrls }) => {
-  const myWidth = 700;
+const SlideShow = ({ imageUrls, width }) => {
+  const myWidth = width * 0.95;
   const aspectRatio = 9/16;
   let images = [];
   let waterfall;

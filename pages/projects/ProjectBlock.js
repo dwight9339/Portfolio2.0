@@ -5,14 +5,17 @@ import {
 } from "styles/projectBlock.module.scss";
 import SlideShow from "components/SlideShow";
 import { useRouter } from "next/router";
+import useElementSize from "hooks/useElementSize";
 
 const ProjectBlock = ({ project }) => {
   const router = useRouter();
+  const [blockRef, { width: blockWidth }] = useElementSize();
 
   if (!project) return null;
 
   return (
     <div 
+      ref={blockRef}
       className={projectBlock}
       onClick={() => router.push(`/projects/${encodeURIComponent(project.title)}`)}
     >
@@ -20,6 +23,7 @@ const ProjectBlock = ({ project }) => {
       <p className={tagline}>{project.tagline}</p>
       <SlideShow 
         imageUrls={project.imageUrls} 
+        width={blockWidth}
       />
     </div>
   )
