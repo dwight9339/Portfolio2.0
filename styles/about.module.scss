@@ -4,3 +4,8 @@
 .container {
   @include snippets.centeredColumn;
 }
+
+.aboutCard {
+  @include snippets.card;
+  padding: 0px 20px;
+}
