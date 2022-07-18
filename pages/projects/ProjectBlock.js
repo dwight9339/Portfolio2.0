@@ -18,7 +18,9 @@ const ProjectBlock = ({ project }) => {
     >
       <p className={title}>{project.title}</p>
       <p className={tagline}>{project.tagline}</p>
-      <SlideShow slides={project.imageUrls} />
+      <SlideShow 
+        imageUrls={project.imageUrls} 
+      />
     </div>
   )
 }

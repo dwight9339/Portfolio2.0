@@ -23,9 +23,9 @@ const ProjectPage = ({ project }) => {
       <div className={projectInfoCard}>
         <p className={title}>{project.title}</p>
         <p className={description}>{project.description}</p>
-        <div className={slideshowContainer}>
+        {/* <div className={slideshowContainer}>
           <SlideShow slides={project.imageUrls} /> 
-        </div>
+        </div> */}
         <div className={stack}>
           <h1>Stack</h1>
           <div className={stackItemsContainer}>

@@ -1,8 +1,8 @@
-const SlideShow = ({ slides }) => {
+const SlideShow = ({ imageUrls }) => {
   return (
     <div
       style={{
-        backgroundImage: `url(${slides[0]})`,
+        backgroundImage: `url(${imageUrls[0]})`,
         width: "600px",
         height: "338px"
       }}
