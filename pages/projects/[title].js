@@ -53,7 +53,7 @@ const ProjectPage = ({ project }) => {
         </div>
       </div>
       <div className={linksCard}>
-        <a href={project.appUrl}>
+        {project.appUrl && <a href={project.appUrl}>
           <Image
             src="/images/go_icon.svg"
             width="40px"
@@ -61,8 +61,8 @@ const ProjectPage = ({ project }) => {
             alt="Arrow icon. Click to visit app page"
           />
           <p>Go to app</p>
-        </a>
-        <a href={project.repoUrl}>
+        </a>}
+        {project.repoUrl && <a href={project.repoUrl}>
           <Image
             src="/images/github_logo_small.svg"
             width="40px"
@@ -70,8 +70,8 @@ const ProjectPage = ({ project }) => {
             alt="Github logo icon. Click to see code on GitHub"
           />
           <p>See the code</p>
-        </a>
-        <a href={project.websiteUrl}>
+        </a>}
+        {project.websiteUrl && <a href={project.websiteUrl}>
           <Image
             src="/images/website_icon.svg"
             width="40px"
@@ -79,7 +79,7 @@ const ProjectPage = ({ project }) => {
             alt="Website icon. Click to visit project website"
           />
           <p>Project website</p>
-        </a>
+        </a>}
       </div>
     </div>
   )

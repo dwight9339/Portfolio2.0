@@ -8,16 +8,35 @@
     "websiteUrl": "https://sites.google.com/view/yubi-app",
     "logoImageUrl": "https://i.imgur.com/7BQbAdd.png",
     "screenshotUrls": [
-      "https://i.imgur.com/7NYOuNp.png",
-      "https://i.imgur.com/F08CXxU.png",
+      "https://i.imgur.com/9B2kHe9.jpg",
+      "https://i.imgur.com/yRT6PW2.jpg",
       "https://i.imgur.com/lz8qYQO.png",
-      "https://i.imgur.com/PQYdv0E.png"
+      "https://i.imgur.com/F6mOvyA.png?1"
     ],
     "stack": [
       "NodeJS",
       "Express",
       "MongoDB",
       "React"
+    ]
+  },
+  {
+    "title": "Portfolio",
+    "tagline": "My portfolio. The one you're looking at right now.",
+    "description": "Built to showcase my work as a developer, the portfolio has a minimalist aesthetic and contains a directory for projects I've done as well as 'About Me' and contact pages.",
+    "repoUrl": "https://github.com/dwight9339/Portfolio2.0",
+    "appUrl": "https://david-white.dev",
+    "logoImageUrl": "",
+    "screenshotUrls": [
+      "https://i.imgur.com/9Wif1Yg.png",
+      "https://i.imgur.com/M6ve6qS.png",
+      "https://i.imgur.com/5HjQcd4.png"
+    ],
+    "stack": [
+      "NextJS",
+      "React",
+      "Sass",
+      "ThreeJS"
     ]
   }
 ]
