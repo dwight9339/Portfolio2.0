@@ -7,7 +7,7 @@ const ContactPage = () => {
 
   useEffect(() => {
     setFloaterGeometry(
-      <dodecahedronGeometry args={[3]} />
+      <coneGeometry args={[3, 4, 20, 5, false, 0, 4]} />
     );
   }, []);
 
