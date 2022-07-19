@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { WaterfallSlideshow } from "utils/p5Slideshow";
-import { useRouter } from "next/router";
 
 const Sketch = dynamic(async () => {
   const mod = await import ("react-p5");
@@ -11,14 +10,8 @@ const Sketch = dynamic(async () => {
 });
 
 const SlideShow = ({ imageUrls, width }) => {
-  const router = useRouter();
   const aspectRatio = 9/16;
   const myWidth = width * 0.9;
-
-  // const [images, setImages] = useState([]);
-  // let waterfall;
-
-  
 
   const sketch = useMemo(() => {
     if (!myWidth) return null;
