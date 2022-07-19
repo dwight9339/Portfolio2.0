@@ -6,8 +6,18 @@ import {
   projectsListContainer,
   projectsList  
 } from "styles/projectsPage.module.scss";
+import { ThreejsContext } from "components/Layout";
+import { useContext, useEffect } from "react";
 
 const ProjectsPage = ({ projects }) => {
+  const { setFloaterGeometry } = useContext(ThreejsContext);
+
+  useEffect(() => {
+    setFloaterGeometry(
+      <torusGeometry args={[2.5, 1, 12, 20]} />
+    );
+  }, []);
+
   return (
     <div className={projectsListContainer}>
       <Head>

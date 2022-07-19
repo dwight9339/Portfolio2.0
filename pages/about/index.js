@@ -10,7 +10,7 @@ const AboutPage = () => {
 
   useEffect(() => {
     setFloaterGeometry(
-      <cylinderGeometry args={[2, 2, 3, 6]} />
+      <cylinderGeometry args={[2, 3, 3, 32]} />
     ); 
   }, []);
 
