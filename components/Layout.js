@@ -1,7 +1,14 @@
 import Header from "./Header";
-import { layout, page } from "../styles/layout.module.scss";
+import { Canvas, useFrame } from "@react-three/fiber";
+import useThreejsBackground from "hooks/useThreejsBackground";
+import { 
+  layout, 
+  page
+} from "../styles/layout.module.scss";
 
 const Layout = ({ children }) => {
+  useThreejsBackground();
+
   return (
     <div className={layout}>
       <Header />
@@ -9,7 +16,7 @@ const Layout = ({ children }) => {
         {children}
       </div>
     </div>
-  )
+  );
 }
 
 export default Layout;
