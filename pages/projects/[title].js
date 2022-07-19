@@ -12,9 +12,18 @@ import {
   stackItemsContainer,
   slideshowContainer
 } from "styles/projectPage.module.scss";
-import SlideShow from "components/SlideShow";
+import { ThreejsContext } from "components/Layout";
+import { useContext, useEffect } from "react";
 
 const ProjectPage = ({ project }) => {
+  const { setFloaterGeometry } = useContext(ThreejsContext);
+
+  useEffect(() => {
+    setFloaterGeometry(
+      <sphereGeometry args={[3, 16, 16]} />
+    );
+  }, []);
+
   return (
     <div className={projectPage}>
       <Head>
