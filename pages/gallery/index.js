@@ -3,13 +3,21 @@ import {
 } from "styles/gallery.module.scss";
 import { ThreejsContext } from "components/Layout";
 import { useContext, useEffect } from "react";
+import { Vector2 } from "three";
 
 const GalleryPage = () => {
   const { setFloaterGeometry } = useContext(ThreejsContext);
 
   useEffect(() => {
+    const points = [
+      new Vector2(0, -3), 
+      new Vector2(2.5, -0.3),
+      new Vector2(3.2, 1.4),
+      new Vector2(0.2, 3)
+    ];
+
     setFloaterGeometry(
-      <capsuleGeometry args={[2, 3, 16, 16]} />
+      <latheGeometry args={[points, 20]} />
     );
   }, []);
 
