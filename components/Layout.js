@@ -5,9 +5,11 @@ import {
   threeCanvas
 } from "../styles/layout.module.scss";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { useRef, useState, createContext } from "react";
 
-const Cone = () => {
+export const ThreejsContext = createContext();
+
+const Floater = ({ geometry }) => {
   const mesh = useRef();
 
   useFrame((state, delta) => {
@@ -19,7 +21,7 @@ const Cone = () => {
     <mesh
       ref={mesh}
     >
-      <coneGeometry args={[2, 3, 6]} />
+      {geometry}
       <meshStandardMaterial
         wireframe
         color="#aef900"
@@ -29,16 +31,26 @@ const Cone = () => {
 }
 
 const Layout = ({ children }) => {
+  const [floaterGeometry, updateFloaterGeometry] = useState(
+    <coneGeometry args={[2, 3, 6]} />
+  );
+
   return (
     <div className={layout}>
       <Header />
-      <div className={page}>
-        {children}
-      </div>
+      <ThreejsContext.Provider value={{
+        setFloaterGeometry: (geometry) => {
+          updateFloaterGeometry(() => geometry);
+        }
+      }}>
+        <div className={page}>
+          {children}
+        </div>
+      </ThreejsContext.Provider>
       <div className={threeCanvas}>
         <Canvas>
           <ambientLight />
-          <Cone />
+          <Floater geometry={floaterGeometry} />
         </Canvas>
       </div>
     </div>
