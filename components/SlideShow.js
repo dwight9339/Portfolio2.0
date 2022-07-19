@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import { WaterfallSlideshow } from "utils/p5Slideshow";
 
 const Sketch = dynamic(async () => {
@@ -11,16 +12,24 @@ const Sketch = dynamic(async () => {
 const SlideShow = ({ imageUrls, width }) => {
   const myWidth = width * 0.95;
   const aspectRatio = 9/16;
-  let images = [];
+  const [images, setImages] = useState([]);
   let waterfall;
 
+  useEffect(() => {
+    console.log(`images: ${images}`);
+  }, [images]);
+
   const preload = (p5) => {
+    let imgs = [];
+
     imageUrls.forEach((url) => {
       p5.loadImage(url, (img) => {
         img.resize(myWidth, 0);
-        images.push(img);
+        imgs.push(img);
       });
     });
+
+    setImages(() => imgs);
   }
 
   const setup = (p5, canvasParentRef) => {
