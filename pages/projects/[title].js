@@ -10,13 +10,17 @@ import {
   stack,
   linksCard,
   stackItemsContainer,
-  slideshowContainer
+  logoImageContainer
 } from "styles/projectPage.module.scss";
 import { ThreejsContext } from "components/Layout";
 import { useContext, useEffect } from "react";
+import useElementSize from "hooks/useElementSize";
 
 const ProjectPage = ({ project }) => {
   const { setFloaterGeometry } = useContext(ThreejsContext);
+  const [cardRef, { width: cardWidth }] = useElementSize();
+  const logoImageWidth = cardWidth * 0.8;
+  const logoImageHeight = logoImageWidth * 9/16;
 
   useEffect(() => {
     setFloaterGeometry(
@@ -29,12 +33,16 @@ const ProjectPage = ({ project }) => {
       <Head>
         <title>{`Project - ${project.title}`}</title>
       </Head>
-      <div className={projectInfoCard}>
+      <div className={projectInfoCard} ref={cardRef}>
         <p className={title}>{project.title}</p>
+        <div className={logoImageContainer}>
+          {project.logoImageUrl && <Image
+            src={project.logoImageUrl}
+            width={logoImageWidth}
+            height={logoImageHeight}
+          />}
+        </div>
         <p className={description}>{project.description}</p>
-        {/* <div className={slideshowContainer}>
-          <SlideShow slides={project.imageUrls} /> 
-        </div> */}
         <div className={stack}>
           <h1>Stack</h1>
           <div className={stackItemsContainer}>
@@ -62,6 +70,15 @@ const ProjectPage = ({ project }) => {
             alt="Github logo icon. Click to see code on GitHub"
           />
           <p>See the code</p>
+        </a>
+        <a href={project.websiteUrl}>
+          <Image
+            src="/images/website_icon.svg"
+            width="40px"
+            height="40px"
+            alt="Website icon. Click to visit project website"
+          />
+          <p>Project website</p>
         </a>
       </div>
     </div>

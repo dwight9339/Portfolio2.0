@@ -5,8 +5,8 @@
     "description": "Yubi helps Shopify merchants list their one-of-a-kind products as variants of a 'parent' product. This allows unique products that share similar traits to share description text and prevents dead links from deleted product pages, improving SEO. Yubi's interface saves sellers time by letting them create unique variants quickly and it even provides merchants the option to have variants deleted automatically after they're purchased. It also includes two custom theme app blocks, one to replace the standard, text-based variant picker on their product pages with a grid of thumbnail images, and the other to display information unique to the selected variant.",
     "repoUrl": "https://github.com/dwight9339/yubi",
     "appUrl": "https://apps.shopify.com/unique-variants-manager",
-    "websiteUrl": "https://sites.google.com/view/yubi-app/contact",
-    "logoImageUrl": "",
+    "websiteUrl": "https://sites.google.com/view/yubi-app",
+    "logoImageUrl": "https://i.imgur.com/7BQbAdd.png",
     "screenshotUrls": [
       "https://i.imgur.com/7NYOuNp.png",
       "https://i.imgur.com/F08CXxU.png",
