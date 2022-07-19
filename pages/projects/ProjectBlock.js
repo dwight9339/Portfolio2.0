@@ -22,7 +22,7 @@ const ProjectBlock = ({ project }) => {
       <p className={title}>{project.title}</p>
       <p className={tagline}>{project.tagline}</p>
       <SlideShow 
-        imageUrls={project.imageUrls} 
+        imageUrls={project.screenshotUrls} 
         width={blockWidth}
       />
     </div>
