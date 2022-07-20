@@ -2,7 +2,7 @@ import {
   container,
   aboutCard,
   title,
-  contents,
+  bioContainer,
   photoCubeContainer
 } from "styles/about.module.scss";
 import { useContext, useEffect } from "react";
@@ -30,7 +30,7 @@ const AboutPage = () => {
     <div className={container}>
       <div className={aboutCard}>
         <h2 className={title}>About me</h2>
-        <div className={contents}>
+        <div className={bioContainer}>
           <div className={photoCubeContainer}>
             <PhotoCube />
           </div>
