@@ -17,7 +17,7 @@ const AboutPage = () => {
     setFloaterGeometry(
       <cylinderGeometry args={[2, 3, 3, 32]} />
     ); 
-  }, [setFloaterGeometry]);
+  }, []);
 
   return (
     <div className={container}>

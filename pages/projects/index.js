@@ -16,7 +16,7 @@ const ProjectsPage = ({ projects }) => {
     setFloaterGeometry(
       <torusGeometry args={[2.5, 1, 12, 20]} />
     );
-  }, [setFloaterGeometry]);
+  }, []);
 
   return (
     <div className={projectsListContainer}>

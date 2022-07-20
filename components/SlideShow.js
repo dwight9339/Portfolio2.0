@@ -71,7 +71,7 @@ const SlideShow = ({ imageUrls, width }) => {
         />
       </Suspense>
     );
-  }, [myWidth, aspectRatio, imageUrls]);
+  }, [myWidth]);
 
   return (
     <>
