@@ -7,14 +7,14 @@ const Cube = () => {
   const loader = new TextureLoader();
 
   useFrame((state, delta) => {
-    mesh.current.rotation.y += 0.002;
+    mesh.current.rotation.y += 0.001;
   });
 
   return (
     <mesh
       ref={mesh}
     >
-      <boxGeometry args={[4, 4, 4]} />
+      <boxGeometry args={[3.5, 3.5, 3.5]} />
       <meshBasicMaterial
         map={loader.load("https://i.imgur.com/M4aeiJ9.jpg")}
       />

@@ -1,6 +1,9 @@
 import {
   container,
-  aboutCard
+  aboutCard,
+  title,
+  contents,
+  photoCubeContainer
 } from "styles/about.module.scss";
 import { useContext, useEffect } from "react";
 import { ThreejsContext } from "components/Layout";
@@ -18,10 +21,15 @@ const AboutPage = () => {
   return (
     <div className={container}>
       <div className={aboutCard}>
-        <div>
-          <PhotoCube />
+        <h2 className={title}>About me</h2>
+        <div className={contents}>
+          <div className={photoCubeContainer}>
+            <PhotoCube />
+          </div>
+          <p>
+            Hi! I'm David. I'm a full-stack web developer.
+          </p>
         </div>
-        <h2>About me</h2>
       </div>
     </div>
   )
