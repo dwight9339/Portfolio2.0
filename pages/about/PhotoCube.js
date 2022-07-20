@@ -12,7 +12,7 @@ const Cube = () => {
   ]);
 
   useFrame((state, delta) => {
-    mesh.current.rotation.y += 0.004;
+    mesh.current.rotation.y += 0.001;
   });
 
   return (
