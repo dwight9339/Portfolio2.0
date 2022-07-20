@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import { useMemo } from "react";
 import { WaterfallSlideshow } from "utils/p5Slideshow";
+import { Suspense } from "react";
+import Image from "next/image";
 
 const Sketch = dynamic(async () => {
   const mod = await import ("react-p5");
@@ -8,6 +10,18 @@ const Sketch = dynamic(async () => {
 }, {
   ssr: false
 });
+
+const FallbackImage = ({ imageUrl, width, aspectRatio }) => {
+  const height = width * aspectRatio;
+
+  return (
+    <Image
+      src={imageUrl}
+      width={width}
+      height={height}
+    />
+  )
+}
 
 const SlideShow = ({ imageUrls, width }) => {
   const aspectRatio = 9/16;
@@ -41,11 +55,19 @@ const SlideShow = ({ imageUrls, width }) => {
     };
 
     return (
-      <Sketch
-        preload={preload}
-        setup={setup}
-        draw={draw}
-      />
+      <Suspense
+        fallback={<FallbackImage 
+          imageUrl={imageUrls[0]}
+          width={myWidth}
+          aspectRatio={aspectRatio}
+        />}
+      >
+        <Sketch
+          preload={preload}
+          setup={setup}
+          draw={draw}
+        />
+      </Suspense>
     );
   }, [myWidth]);
 
