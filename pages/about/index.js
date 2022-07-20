@@ -11,7 +11,14 @@ import PhotoCube from "./PhotoCube";
 
 const AboutPage = () => {
   const { setFloaterGeometry } = useContext(ThreejsContext);
-  const bioText = "Hi! I'm David. I'm a full-stack web developer."
+  const bioText = `
+    Hi, I'm David. I'm a full-stack web developer who loves building things
+    and the thrill of tackling a difficult problem. The only thing better 
+    than finding a solution that works is finding an elegant solution that
+    works. 
+    When I'm not building web apps, I'm probably prototyping an idea
+    for a new invention, building furniture, or carving something out of wood.
+  `;
 
   useEffect(() => {  
     setFloaterGeometry(
