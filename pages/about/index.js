@@ -27,7 +27,8 @@ const AboutPage = () => {
             <PhotoCube />
           </div>
           <p>
-            Hi! I'm David. I'm a full-stack web developer.
+            Hi! I'm David. I'm a full-stack web developer with a 
+            
           </p>
         </div>
       </div>
