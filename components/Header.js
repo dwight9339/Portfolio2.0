@@ -15,7 +15,7 @@ const Header = () => {
   const { scrollingUp, yOffset } = useScrolling();
   const [headerShowing, setHeaderShowing] = useState(true);
   const [headerClass, setHeaderClass] = useState(header);
-  const inStickyZone = useMemo(() => yOffset > 210, [yOffset]);
+  const inStickyZone = useMemo(() => yOffset > 10, [yOffset]);
   
   useEffect(() => {
     if (inStickyZone && headerShowing && !scrollingUp) {
@@ -30,12 +30,16 @@ const Header = () => {
   return (
     <header className={headerClass}>
       <div className={logoContainer}>
-        <Image 
-          src="/images/mylogo.svg" 
-          width="200px"
-          height="200px"
-          alt="David White logo"
-        />  
+        <Link href="/">
+          <a>
+            <Image 
+              src="/images/mylogo.svg" 
+              width="200px"
+              height="100px"
+              alt="David White logo"
+            />
+          </a>
+        </Link>  
       </div>
       <nav className={navbar}>
         <div className={navItem}>
@@ -44,17 +48,17 @@ const Header = () => {
           </Link>
         </div>
         <div className={navItem}>
-          <Link href="">
+          <Link href="/gallery">
             <a>Gallery</a>
           </Link>
         </div>
         <div className={navItem}>
-          <Link href="">
+          <Link href="/about">
             <a>About</a>
           </Link>
         </div>
         <div className={navItem}>
-          <Link href="">
+          <Link href="/contact">
             <a>Contact</a>
           </Link>
         </div>

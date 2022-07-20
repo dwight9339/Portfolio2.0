@@ -1,0 +1,6 @@
+@use "constants";
+@use "snippets";
+
+.container {
+  @include snippets.centeredColumn;
+}

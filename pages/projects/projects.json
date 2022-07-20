@@ -1,20 +1,42 @@
 [
   {
-    "title": "Shorties",
-    "tagline": "A url shortening service... with ATTITUDE!",
-    "description": "Every highlight needs it's own personal shadow. Mountains are so simple, they're hard. We'll take a little bit of Van Dyke Brown. Working it up and down, back and forth. Decide where your cloud lives. Maybe he lives right in here. I'm going to mix up a little color. We’ll use Van Dyke Brown, Permanent Red, and a little bit of Prussian Blue. Get tough with it, get strong. Let's make some happy little clouds in our world.",
-    "repoUrl": "https://github.com/dwight9339/Shorties",
-    "appUrl": "https://shortiezzz.herokuapp.com/",
-    "imageUrls": [
-      "https://i.imgur.com/7NYOuNp.png",
-      "https://i.imgur.com/F08CXxU.png",
-      "https://i.imgur.com/lz8qYQO.png"
+    "title": "Yubi",
+    "tagline": "A Shopify app for sellers of unique products",
+    "description": "Yubi helps Shopify merchants list their one-of-a-kind products as variants of a 'parent' product. This allows unique products that share similar traits to share description text and prevents dead links from deleted product pages, improving SEO. Yubi's interface saves sellers time by letting them create unique variants quickly and it even provides merchants the option to have variants deleted automatically after they're purchased. It also includes two custom theme app blocks, one to replace the standard, text-based variant picker on their product pages with a grid of thumbnail images, and the other to display information unique to the selected variant.",
+    "repoUrl": "https://github.com/dwight9339/yubi",
+    "appUrl": "https://apps.shopify.com/unique-variants-manager",
+    "websiteUrl": "https://sites.google.com/view/yubi-app",
+    "logoImageUrl": "https://i.imgur.com/7BQbAdd.png",
+    "screenshotUrls": [
+      "https://i.imgur.com/9B2kHe9.jpg",
+      "https://i.imgur.com/yRT6PW2.jpg",
+      "https://i.imgur.com/lz8qYQO.png",
+      "https://i.imgur.com/F6mOvyA.png?1"
     ],
     "stack": [
       "NodeJS",
       "Express",
       "MongoDB",
       "React"
+    ]
+  },
+  {
+    "title": "Portfolio",
+    "tagline": "My portfolio",
+    "description": "Built to showcase my work as a developer, the portfolio has a minimalist aesthetic and contains a directory for projects I've done as well as 'About Me' and contact pages.",
+    "repoUrl": "https://github.com/dwight9339/Portfolio2.0",
+    "appUrl": "https://david-white.dev",
+    "logoImageUrl": "",
+    "screenshotUrls": [
+      "https://i.imgur.com/9Wif1Yg.png",
+      "https://i.imgur.com/M6ve6qS.png",
+      "https://i.imgur.com/5HjQcd4.png"
+    ],
+    "stack": [
+      "NextJS",
+      "React",
+      "Sass",
+      "ThreeJS"
     ]
   }
 ]

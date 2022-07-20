@@ -27,8 +27,9 @@
   margin: 0px 10px;
 }
 
-.slideshowContainer {
-  margin: 10px 0px;
+.logoImageContainer {
+  @include snippets.centeredColumn;
+  margin-bottom: 15px;
 }
 
 .stack {
@@ -50,14 +51,14 @@
 .linksCard {
   @include snippets.card;
   @include snippets.centeredColumn;
-  width: 150px;
-  height: 220px;
-  padding: 10px 5px;
+  width: auto;
+  height: 100%;
+  padding: 10px 7px;
 
   a, a:visited {
     @include snippets.centeredColumn;
     text-decoration: none;
     color: constants.$foreground-primary;
-    margin: 6px;
+    margin-top: 10px;
   }
 }

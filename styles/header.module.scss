@@ -27,13 +27,16 @@
   background-color: constants.$background-primary;
   position: fixed;
   left: 0px;
-}
+  z-index: 1;
+} 
 
 .header {
   @extend %header-base;
+  @media(max-width: 800px) {
+    flex-direction: column;
+  }
   top: 0px;
 }
-
 .headerSlideIn {
   @extend .header;
   animation: slideIn 0.2s ease-in-out;
@@ -41,22 +44,37 @@
 
 .headerSlideOut {
   @extend %header-base;
-  top: -300px;
+  @media(max-width: 800px) {
+    flex-direction: column;
+    top: -180px;
+  }
+  @media(min-width: 801px) {
+    top: -155px;
+  }
+  
   animation: slideOut 0.2s ease-in-out;
 }
 
 .logoContainer {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px;
+  @media(max-width: 800px) {
+    align-self: center;
+  }
 }
 
 .navbar {
   display: flex;
   align-items: center;
+  @media(max-width: 800px) {
+    align-self: center;
+  }
 }
 
 .navItem {
   margin: 0px 10px;
+  @media(max-width: 800px) {
+    margin-bottom: 10px;
+  }
 }
 
 .navItem a {

@@ -1,19 +1,19 @@
-import Home from "components/Home";
+import Contact from "./Contact";
 import { ThreejsContext } from "components/Layout";
 import { useContext, useEffect } from "react";
 
-const HomePage = () => {
+const ContactPage = () => {
   const { setFloaterGeometry } = useContext(ThreejsContext);
 
   useEffect(() => {
     setFloaterGeometry(
-      <torusKnotGeometry args={[2, 0.5]} />
+      <coneGeometry args={[3, 4, 20, 5, false, 0, 4]} />
     );
   }, []);
 
   return (
-    <Home />
+    <Contact />
   );
 }
 
-export default HomePage;
+export default ContactPage;

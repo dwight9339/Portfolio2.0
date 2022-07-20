@@ -1,0 +1,42 @@
+@use "constants";
+@use "snippets";
+
+.container {
+  @include snippets.centeredColumn;
+}
+
+.aboutCard {
+  @include snippets.card;
+  @include snippets.centeredColumn;
+  padding: 0px 20px;
+  width: 95%;
+  max-width: 700px;
+}
+
+.bioContainer {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 801px) {
+    flex-direction: row;
+  }
+
+  p {
+    padding: 10px 5px;
+  }
+}
+
+.photoCubeContainer {
+  width: 300px;
+  height: 300px;
+}
+
+.links {
+  margin: 25px 0px;
+  display: flex;
+  gap: 20px;
+}

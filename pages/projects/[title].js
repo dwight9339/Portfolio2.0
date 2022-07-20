@@ -10,22 +10,39 @@ import {
   stack,
   linksCard,
   stackItemsContainer,
-  slideshowContainer
+  logoImageContainer
 } from "styles/projectPage.module.scss";
-import SlideShow from "components/SlideShow";
+import { ThreejsContext } from "components/Layout";
+import { useContext, useEffect } from "react";
+import useElementSize from "hooks/useElementSize";
 
 const ProjectPage = ({ project }) => {
+  const { setFloaterGeometry } = useContext(ThreejsContext);
+  const [cardRef, { width: cardWidth }] = useElementSize();
+  const logoImageWidth = cardWidth * 0.8;
+  const logoImageHeight = logoImageWidth * 9/16;
+
+  useEffect(() => {
+    setFloaterGeometry(
+      <sphereGeometry args={[3, 16, 16]} />
+    );
+  }, []);
+
   return (
     <div className={projectPage}>
       <Head>
         <title>{`Project - ${project.title}`}</title>
       </Head>
-      <div className={projectInfoCard}>
+      <div className={projectInfoCard} ref={cardRef}>
         <p className={title}>{project.title}</p>
-        <p className={description}>{project.description}</p>
-        <div className={slideshowContainer}>
-          <SlideShow slides={project.imageUrls} /> 
+        <div className={logoImageContainer}>
+          {project.logoImageUrl && <Image
+            src={project.logoImageUrl}
+            width={logoImageWidth}
+            height={logoImageHeight}
+          />}
         </div>
+        <p className={description}>{project.description}</p>
         <div className={stack}>
           <h1>Stack</h1>
           <div className={stackItemsContainer}>
@@ -36,7 +53,7 @@ const ProjectPage = ({ project }) => {
         </div>
       </div>
       <div className={linksCard}>
-        <a href={project.appUrl}>
+        {project.appUrl && <a href={project.appUrl}>
           <Image
             src="/images/go_icon.svg"
             width="40px"
@@ -44,8 +61,8 @@ const ProjectPage = ({ project }) => {
             alt="Arrow icon. Click to visit app page"
           />
           <p>Go to app</p>
-        </a>
-        <a href={project.repoUrl}>
+        </a>}
+        {project.repoUrl && <a href={project.repoUrl}>
           <Image
             src="/images/github_logo_small.svg"
             width="40px"
@@ -53,7 +70,16 @@ const ProjectPage = ({ project }) => {
             alt="Github logo icon. Click to see code on GitHub"
           />
           <p>See the code</p>
-        </a>
+        </a>}
+        {project.websiteUrl && <a href={project.websiteUrl}>
+          <Image
+            src="/images/website_icon.svg"
+            width="40px"
+            height="40px"
+            alt="Website icon. Click to visit project website"
+          />
+          <p>Project website</p>
+        </a>}
       </div>
     </div>
   )
