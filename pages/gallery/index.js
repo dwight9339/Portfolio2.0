@@ -19,7 +19,7 @@ const GalleryPage = () => {
     setFloaterGeometry(
       <latheGeometry args={[points, 20]} />
     );
-  }, []);
+  }, [setFloaterGeometry]);
 
   return (
     <div className={container}>

@@ -11,12 +11,13 @@ import PhotoCube from "./PhotoCube";
 
 const AboutPage = () => {
   const { setFloaterGeometry } = useContext(ThreejsContext);
+  const bioText = "Hi! I'm David. I'm a full-stack web developer."
 
   useEffect(() => {  
     setFloaterGeometry(
       <cylinderGeometry args={[2, 3, 3, 32]} />
     ); 
-  }, []);
+  }, [setFloaterGeometry]);
 
   return (
     <div className={container}>
@@ -27,7 +28,7 @@ const AboutPage = () => {
             <PhotoCube />
           </div>
           <p>
-            Hi! I'm David. I'm a full-stack web developer.
+            {bioText}
           </p>
         </div>
       </div>

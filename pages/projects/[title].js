@@ -26,7 +26,7 @@ const ProjectPage = ({ project }) => {
     setFloaterGeometry(
       <sphereGeometry args={[3, 16, 16]} />
     );
-  }, []);
+  }, [setFloaterGeometry]);
 
   return (
     <div className={projectPage}>

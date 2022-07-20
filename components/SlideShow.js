@@ -27,6 +27,12 @@ const SlideShow = ({ imageUrls, width }) => {
   const aspectRatio = 9/16;
   const myWidth = width * 0.9;
 
+  const fallback = <FallbackImage 
+    imageUrl={imageUrls[0]}
+    width={myWidth}
+    aspectRatio={aspectRatio}
+  />;
+
   const sketch = useMemo(() => {
     if (!myWidth) return null;
 
@@ -56,11 +62,7 @@ const SlideShow = ({ imageUrls, width }) => {
 
     return (
       <Suspense
-        fallback={<FallbackImage 
-          imageUrl={imageUrls[0]}
-          width={myWidth}
-          aspectRatio={aspectRatio}
-        />}
+        fallback={fallback}
       >
         <Sketch
           preload={preload}
@@ -69,7 +71,7 @@ const SlideShow = ({ imageUrls, width }) => {
         />
       </Suspense>
     );
-  }, [myWidth]);
+  }, [myWidth, aspectRatio, imageUrls]);
 
   return (
     <>
