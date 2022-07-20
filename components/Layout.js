@@ -14,7 +14,7 @@ const Floater = ({ geometry }) => {
 
   useFrame((state, delta) => {
     mesh.current.rotation.x += 0.001;
-    mesh.current.rotation.z += 0.003;
+    mesh.current.rotation.z += 0.001;
   });
 
   return (
