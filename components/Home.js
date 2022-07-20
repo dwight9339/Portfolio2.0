@@ -55,7 +55,7 @@ const Home = () => {
         <p>
           To drop me a line, you can use the form on 
           the <Link href="/about"><a>contact</a></Link> page 
-          or email me at david@david-white.dev.
+          or email me at <a href="mailto:david@david-white.dev">david@david-white.dev</a>.
         </p>
       </div>
     </div>
