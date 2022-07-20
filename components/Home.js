@@ -23,7 +23,7 @@ const Home = () => {
         </div>
         <p>
           Check out the <Link href="/projects"><a>projects</a></Link> page 
-          to see some things that I've worked on.
+          to see some things that I&apos;ve worked on.
         </p>
         <div className={galleryIcon}>
           <Image
