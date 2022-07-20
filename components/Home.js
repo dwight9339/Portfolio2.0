@@ -1,10 +1,8 @@
 import {
   container,
   introCard,
-  projectIcon,
-  galleryIcon,
-  aboutIcon,
-  contactIcon
+  rotateY,
+  rotateZ
 } from "/styles/home.module.scss";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,7 +12,7 @@ const Home = () => {
     <div className={container}>
       <div className={introCard}>
         <h2>Welcome to my portfolio</h2>
-        <div className={projectIcon}>
+        <div className={rotateZ}>
           <Image
             src="/images/project_icon.svg"
             width={150}
@@ -25,7 +23,7 @@ const Home = () => {
           Check out the <Link href="/projects"><a>projects</a></Link> page 
           to see some things that I&apos;ve worked on.
         </p>
-        <div className={galleryIcon}>
+        <div className={rotateY}>
           <Image
             src="/images/gallery_icon.png"
             width={150}
@@ -36,7 +34,7 @@ const Home = () => {
           Head over to the <Link href="/gallery"><a>gallery</a></Link> to see 
           some cool code animations.
         </p>
-        <div className={aboutIcon}>
+        <div className={rotateY}>
           <Image
             src="/images/about_icon.png"
             width={150}
@@ -47,7 +45,7 @@ const Home = () => {
           You can learn a little more about me and find links to my socials 
           over on the <Link href="/about"><a>about</a></Link> page.
         </p>
-        <div className={contactIcon}>
+        <div className={rotateY}>
           <Image
             src="/images/contact_icon.png"
             width={150}

@@ -15,6 +15,7 @@
   h2 {
     padding: 15px 0px 25px 0px;
     font-size: 2em;
+    text-align: center;
   }
 
   a {
@@ -55,22 +56,17 @@
   }
 }
 
-.projectIcon {
-  animation: rotate-z-axis 30s linear;
-  animation-iteration-count: infinite;
+@mixin animated($animation, $duration) {
+  @media(min-width: 801) {
+    animation: $animation $duration linear;
+    animation-iteration-count: infinite;
+  }
 }
 
-.galleryIcon {
-  animation: rotate-y-axis 20s linear 0s;
-  animation-iteration-count: infinite;
+.rotateZ {
+  @include animated(rotate-z-axis, 30);
 }
 
-.aboutIcon {
-  animation: rotate-y-axis 20s linear -7s;
-  animation-iteration-count: infinite;
-}
-
-.contactIcon {
-  animation: rotate-y-axis 20s linear -14s;
-  animation-iteration-count: infinite;
+.rotateY {
+  @include animated(rotate-y-axis, 20, );
 }
