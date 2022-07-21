@@ -63,6 +63,7 @@ const Contact = () => {
               name="name"
               size="30"
               required
+              data-testid="nameField"
             ></input>
           </div>
           <div
@@ -76,6 +77,7 @@ const Contact = () => {
               type="email"
               name="email"
               size="30"
+              data-testid="emailField"
               required
             ></input>
           </div>
@@ -92,13 +94,14 @@ const Contact = () => {
               width: "300px",
               height: "200px"
             }}
-            
+            data-testid="messageField"
           ></textarea>
           <input 
             type="submit" 
             value="Submit" 
             className={submitButton}
             disabled={submitDisabled}
+            data-testid="submitButton"
           />
         </form>
       </div>
