@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor, cleanup } from "@testing-library/react";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import Contact, { sendInquiryRequest } from "pages/contact/Contact";
+import Contact, { successText, failureText } from "pages/contact/Contact";
 import '@testing-library/jest-dom';
 import axios from "axios";
 
@@ -52,31 +52,29 @@ describe("Contact form", () => {
     let serverRequestRecieved = false;
 
     server.events.on("request:start", (req) => {
+      console.log("Received request");
       serverRequestRecieved = true;
     });
 
     const clickAndCheckFalse = async () => {
       fireEvent.click(submitButton);
-      await new Promise(resolve => setTimeout(resolve, 0));
+      const resolved = await new Promise(resolve => setTimeout(() => true, 0));
+      expect(resolved).toBe(true);
       expect(serverRequestRecieved).toBe(false);
     };
 
-    const clickAndCheckTrue = async () => {
-      fireEvent.click(submitButton);
-      await new Promise(resolve => setTimeout(resolve, 0));
-      expect(serverRequestRecieved).toBe(true);
-    };
-
     clickAndCheckFalse();
 
-    fireEvent.change(nameField, "Test"); 
+    nameField.setAttribute("value", "Test");
     clickAndCheckFalse();
 
-    fireEvent.change(emailField, "test@testdomain.test");
+    emailField.setAttribute("value", "test@testdomain.test");
     clickAndCheckFalse();
 
-    fireEvent.change(messageField, "This is a test");
-    clickAndCheckTrue();
+    messageField.innerHTML = "This is a test";
+    fireEvent.click(submitButton);
+
+    await waitFor(() => expect(serverRequestRecieved).toBe(true));
   });
 
   test("shows success message after successful submission", async () => {
@@ -87,20 +85,26 @@ describe("Contact form", () => {
       submitButton
     } = getTestComponent();
     let serverRequestRecieved = false;
+    let serverResponseSent = false;
 
     server.events.on("request:start", (req) => {
       serverRequestRecieved = true;
     });
 
-    fireEvent.change(nameField, "Test User");
-    fireEvent.change(emailField, "test.user@testdomain.net");
-    fireEvent.change(messageField, "This is a test");
+    server.events.on("response:mocked", (res) => {
+      serverResponseSent = true;
+    });
+
+    nameField.setAttribute("value", "Test");
+    emailField.setAttribute("value", "test@testdomain.test");
+    messageField.innerHTML = "This is a test";
     fireEvent.click(submitButton);
 
-    await new Promise(resolve => setTimeout(resolve, 0));
-    expect(serverRequestRecieved).toBe(true);
+    await waitFor(() => expect(serverRequestRecieved).toBe(true));
+    await waitFor(() => expect(serverResponseSent).toBe(true));
 
-    await waitFor(() => expect(screen.getByTestId("feedbackMessage")).toHaveTextContent("Message sent"));
+    expect(screen.getByTestId("feedbackMessage")).toBeVisible();
+    expect(screen.getByTestId("feedbackMessage")).toHaveTextContent(successText);
   });
 
   test("shows failure message after unsuccessful submission", async () => {
@@ -118,19 +122,25 @@ describe("Contact form", () => {
     );
 
     let serverRequestRecieved = false;
+    let serverResponseSent = false;
 
     server.events.on("request:start", (req) => {
       serverRequestRecieved = true;
     });
 
-    fireEvent.change(nameField, "Test User");
-    fireEvent.change(emailField, "test.user@testdomain.net");
-    fireEvent.change(messageField, "This is a test");
+    server.events.on("response:mocked", (res) => {
+      serverResponseSent = true;
+    });
+
+    nameField.setAttribute("value", "Test");
+    emailField.setAttribute("value", "test@testdomain.test");
+    messageField.innerHTML = "This is a test";
     fireEvent.click(submitButton);
 
-    await new Promise(resolve => setTimeout(resolve, 0));
-    expect(serverRequestRecieved).toBe(true);
+    await waitFor(() => expect(serverRequestRecieved).toBe(true));
+    await waitFor(() => expect(serverResponseSent).toBe(true));
 
-    await waitFor(() => expect(screen.getByTestId("feedbackMessage")).toHaveTextContent("Unable to send message"));
+    expect(screen.getByTestId("feedbackMessage")).toBeVisible();
+    expect(screen.getByTestId("feedbackMessage")).toHaveTextContent(failureText);
   });
 });
