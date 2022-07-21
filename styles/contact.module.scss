@@ -12,6 +12,10 @@
   padding: 0px 20px 25px 20px;
   width: 95%;
   max-width: 400px;
+
+  h1 {
+    margin: 0.75em 0em 13px 0em;
+  }
 }
 
 .form {
@@ -51,38 +55,28 @@
   background-color: constants.$background-secondary;
 }
 
-%message-base {
-  position: fixed;
-  @media(max-width: 800px) {
-    top: 200px;
-  }
-  @media(min-width: 801px) {
-    top: 160px;
-  }
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  padding: 7px;
-  border-radius: 5%;
-  color: constants.$background-primary;
-}
-
-.myMessage {
-  @extend %message-base;
-}
-
-@keyframes fadeOut {
+@keyframes backgroundFlash {
   from {
-    opacity: 1.0;
+    background-color: white;
   }
 
   to {
-    opacity: 0.0;
+    background-color: transparentize(constants.$background-secondary, 0.2);
   }
 }
 
-.messageFade {
-  @extend %message-base;
-  opacity: 0.0;
-  animation: fadeOut 1s linear;
+.feedbackMessageContainer {
+  background-color: transparentize(constants.$background-secondary, 0.2);
+  animation: backgroundFlash 1s ease-out;
+  border-radius: 5%;
+  margin-bottom: 16px;
+  padding: 12px 12px;
+  max-width: 200px;
+
+  p {
+    margin: 0px 5px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.4em;
+  }
 }
