@@ -1,7 +1,7 @@
 import ProjectBlock from "./ProjectBlock";
 import Head from "next/head";
 import fsPromises from 'fs/promises';
-import path from 'path'
+import path from 'path';
 import { 
   projectsListContainer,
   projectsList  

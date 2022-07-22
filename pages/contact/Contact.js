@@ -7,24 +7,20 @@ import {
   fieldLabel,
   messageFieldLabel,
   field,
-  myMessage,
-  messageFade
+  feedbackMessageContainer
 } from "styles/contact.module.scss";
 import { useState } from "react";
 
-const Contact = () => {
-  const [messageClass, setMessageClass] = useState();
-  const [message, setMessage] = useState("");
-  const [submitDisabled, setSubmitDisabled] = useState(false);
+export const successText = "Message sent";
+export const failureText = "Unable to send message. Please try again or email david@david-white.dev";
 
-  const showMessage = (msg) => {
-    setMessageClass(myMessage);
-    setMessage(msg);
-    setTimeout(() => setMessageClass(messageFade), 2000);
-  }
+const Contact = () => {
+  const [feedbackMessage, setFeedbackMessage] = useState();
+  const [submitDisabled, setSubmitDisabled] = useState(false);
 
   const handleSubmit = async (e) => {
     setSubmitDisabled(true);
+    setFeedbackMessage(null);
     e.preventDefault();
     const { name, email, message } = e.target.elements;
     try {
@@ -34,10 +30,10 @@ const Contact = () => {
         message: message.value
       });
       e.target.reset();
-      showMessage("Message sent");
+      setFeedbackMessage(successText);
     } catch(err) {
       console.error(err);
-      showMessage("Unable to send message");
+      setFeedbackMessage(failureText);
     } finally {
       setSubmitDisabled(false);
     }
@@ -45,11 +41,17 @@ const Contact = () => {
 
   return (
     <div className={container}>
-      <div className={messageClass}>
-        <p>{message}</p>
-      </div>
       <div className={formCard}>
         <h1>Contact me</h1>
+        {feedbackMessage && <div
+          className={feedbackMessageContainer}
+        >
+          <p 
+            data-testid="feedbackMessage"
+          >
+            {feedbackMessage}
+          </p>
+        </div>}
         <form onSubmit={handleSubmit} className={form}>
           <div
             className={field}
@@ -63,6 +65,7 @@ const Contact = () => {
               name="name"
               size="30"
               required
+              data-testid="nameField"
             ></input>
           </div>
           <div
@@ -76,6 +79,7 @@ const Contact = () => {
               type="email"
               name="email"
               size="30"
+              data-testid="emailField"
               required
             ></input>
           </div>
@@ -92,13 +96,14 @@ const Contact = () => {
               width: "300px",
               height: "200px"
             }}
-            
+            data-testid="messageField"
           ></textarea>
           <input 
             type="submit" 
             value="Submit" 
             className={submitButton}
             disabled={submitDisabled}
+            data-testid="submitButton"
           />
         </form>
       </div>

@@ -15,9 +15,8 @@ const AboutPage = () => {
   const { setFloaterGeometry } = useContext(ThreejsContext);
   const bioText = `
     Hi, I'm David. I'm a full-stack web developer who loves building things
-    and the thrill of tackling a difficult problem. The only thing better 
-    than finding a solution that works is finding an elegant solution that
-    works. 
+    and the thrill of tackling a difficult problem. I like conceptualizing new
+    ideas but being able to make them real is the best feeling ever. 
     When I'm not building web apps, I'm probably learning a new skill, 
     building furniture or carving something out of wood.
   `;
