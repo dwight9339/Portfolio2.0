@@ -20,9 +20,6 @@ const ProjectsPage = ({ projects }) => {
 
   return (
     <div className={projectsListContainer}>
-      <Head>
-        <title>Projects</title>
-      </Head>
       <div className={projectsList}>
         {projects.map((project, i) => {
           return <ProjectBlock key={i} project={project} />

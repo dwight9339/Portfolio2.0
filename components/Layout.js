@@ -6,6 +6,7 @@ import {
 } from "../styles/layout.module.scss";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useState, createContext } from "react";
+import Head from "next/head";
 
 export const ThreejsContext = createContext();
 
@@ -37,6 +38,9 @@ const Layout = ({ children }) => {
 
   return (
     <div className={layout}>
+      <Head>
+        <title>Portfolio - David White</title>
+      </Head>
       <Header />
       <ThreejsContext.Provider value={{
         setFloaterGeometry: (geometry) => {
