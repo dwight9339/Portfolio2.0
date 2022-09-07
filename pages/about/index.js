@@ -18,7 +18,7 @@ const AboutPage = () => {
     and the thrill of tackling a difficult problem. I like conceptualizing new
     ideas but being able to make them real is the best feeling ever. 
     When I'm not building web apps, I'm probably learning a new skill, 
-    building furniture or carving something out of wood.
+    building furniture, or carving something out of wood.
   `;
 
   useEffect(() => {  
