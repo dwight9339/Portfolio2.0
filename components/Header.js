@@ -48,8 +48,8 @@ const Header = () => {
           </Link>
         </div>
         <div className={navItem}>
-          <Link href="/gallery">
-            <a>Gallery</a>
+          <Link href="/blog">
+            <a>Blog</a>
           </Link>
         </div>
         <div className={navItem}>

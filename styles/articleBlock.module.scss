@@ -1,0 +1,35 @@
+@use "snippets";
+@use "constants";
+
+.articleBlock {
+  @include snippets.card;
+  display: flex;
+  padding: 10px 15px;
+  cursor: pointer;
+  height: 150px;
+}
+
+.articleInfo {
+  margin-left: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.articleTitle {
+  font-weight: bold;
+  font-size: 24px;
+  color: constants.$foreground-primary;
+}
+
+.description {
+  color: constants.$foreground-secondary;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.pubDate {
+  color: constants.$foreground-secondary;
+  font-size: 14px;
+  margin-top: auto;
+}

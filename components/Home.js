@@ -31,8 +31,7 @@ const Home = () => {
           />
         </div>
         <p>
-          Head over to the <Link href="/gallery"><a>gallery</a></Link> to see 
-          some cool code animations.
+          Checkout my <Link href="/blog"><a>blog</a></Link>.
         </p>
         <div>
           <Image

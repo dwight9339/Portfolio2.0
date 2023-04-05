@@ -5,6 +5,6 @@ module.exports = {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ["i.imgur.com"]
+    domains: ["i.imgur.com", "cdn-images-1.medium.com"]
   }
 }

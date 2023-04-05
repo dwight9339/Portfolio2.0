@@ -1,15 +1,15 @@
 @use "constants";
 @use "snippets";
 
+.articleListContainer {
+  margin-top: 20px;
+}
+
 .pageTitle {
   @include snippets.pageTitle;
 }
 
-.projectsListContainer {
-  margin-top: 20px;
-}
-
-.projectsList {
+.articleList {
   display: flex;
   flex-direction: column;
   align-items: center;

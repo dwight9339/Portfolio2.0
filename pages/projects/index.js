@@ -2,10 +2,7 @@ import ProjectBlock from "./ProjectBlock";
 import Head from "next/head";
 import fsPromises from 'fs/promises';
 import path from 'path';
-import { 
-  projectsListContainer,
-  projectsList  
-} from "styles/projectsPage.module.scss";
+import styles from "styles/projectsPage.module.scss";
 import { ThreejsContext } from "components/Layout";
 import { useContext, useEffect } from "react";
 
@@ -19,11 +16,14 @@ const ProjectsPage = ({ projects }) => {
   }, []);
 
   return (
-    <div className={projectsListContainer}>
-      <div className={projectsList}>
-        {projects.map((project, i) => {
-          return <ProjectBlock key={i} project={project} />
-        })}
+    <div>
+      <div className={styles.pageTitle}>Projects</div>
+      <div className={styles.projectsListContainer}>
+        <div className={styles.projectsList}>
+          {projects.map((project, i) => {
+            return <ProjectBlock key={i} project={project} />
+          })}
+        </div>
       </div>
     </div>
   )

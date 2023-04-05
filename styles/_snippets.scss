@@ -21,3 +21,14 @@
   padding: 3px;
   border-radius: 5px;
 }
+
+@mixin pageTitle {
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 45px;
+  font-weight: bold;
+  color: constants.$foreground-primary;
+  text-shadow: constants.$background-primary 0px 0px 10px;
+}
