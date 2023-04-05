@@ -56,6 +56,14 @@ const AboutPage = () => {
               alt="YouTube logo icon. Click to visit my linkedin page"
             />
           </a>
+          <a href="https://www.medium.com/@david-r-white">
+            <Image
+              src="/images/medium_link.svg"
+              width={55}
+              height={55}
+              alt="Medium logo icon. Click to visit my Medium blog"
+            />
+          </a>
           <a href="https://www.youtube.com/channel/UCj6tkIHQHufV5VMaCx0Hvrg">
             <Image
               src="/images/youtube_icon.svg"
