@@ -39,6 +39,7 @@ const Layout = ({ children }) => {
   return (
     <div className={layout}>
       <Head>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
         <title>Portfolio - David White</title>
       </Head>
       <Header />
