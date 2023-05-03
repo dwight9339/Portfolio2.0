@@ -31,7 +31,7 @@ const Home = () => {
           />
         </div>
         <p>
-          Checkout my <Link href="/blog"><a>blog</a></Link>.
+          Check out my <Link href="/blog"><a>blog</a></Link>.
         </p>
         <div>
           <Image
