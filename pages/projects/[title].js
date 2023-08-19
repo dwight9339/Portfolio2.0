@@ -38,8 +38,9 @@ const ProjectPage = ({ project }) => {
         <div className={logoImageContainer}>
           {project.logoImageUrl && <Image
             src={project.logoImageUrl}
-            width={logoImageWidth}
-            height={logoImageHeight}
+            width={500}
+            height={200}
+            objectFit="contain"
           />}
         </div>
         <p className={description}>{project.description}</p>

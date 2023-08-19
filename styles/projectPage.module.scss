@@ -30,6 +30,9 @@
 .logoImageContainer {
   @include snippets.centeredColumn;
   margin-bottom: 15px;
+  // position: relative;
+  // width: 90%;
+  // height: 40%;
 }
 
 .stack {

@@ -1,5 +1,46 @@
 [
   {
+    "title": "Excursia",
+    "tagline": "A travel itinerary builder app with activity suggestion and sharing capabilities.",
+    "description": "Excursia helps you maximize your vacation time by allowing you to search for activities around a given destination. Tailor your suggestion results based on interest and distance from location and add them to your itinerary. The itinerary builder page features a drag-and-drop interface and allows you can even allows you to add custom activities. You can view a saved itinerary, get Google maps directions to each location, and share your itinerary all from the itinerary viewing page.",
+    "repoUrl": "https://github.com/dwight9339/excursia",
+    "appUrl": "https://excursia.dev",
+    "logoImageUrl": "https://i.imgur.com/D453yz8.png",
+    "screenshotUrls": [
+      "https://i.imgur.com/TEYwgPo.png",
+      "https://i.imgur.com/ozKgbeO.png",
+      "https://i.imgur.com/rj4sz7N.png",
+      "https://i.imgur.com/dwiT8tc.png"
+    ],
+    "stack": [
+      "NextJS",
+      "React",
+      "MongoDB",
+      "Sass",
+      "Google Maps API"
+    ]
+  },
+  {
+    "title": "WR_Storefront",
+    "tagline": "A custom e-commerce storefront app for artists.",
+    "description": "This is an e-commerce storefront that uses a MedusaJS backend for inventory management and includes a custom Stripe integration for payments as well as a Shippo integration for order fulfillment",
+    "repoUrl": "https://github.com/dwight9339/wr-storefront",
+    "screenshotUrls": [
+      "https://i.imgur.com/5XamX3O.gif",
+      "https://i.imgur.com/1N87bzd.png",
+      "https://i.imgur.com/legMxxX.gif",
+      "https://i.imgur.com/wGLVhle.png"
+    ],
+    "stack": [
+      "NextJS",
+      "React",
+      "Sass",
+      "MedusaJS",
+      "PostgreSQL",
+      "Stripe"
+    ]
+  },
+  {
     "title": "Yubi",
     "tagline": "A Shopify app for sellers of unique products",
     "description": "Yubi helps Shopify merchants list their one-of-a-kind products as variants of a 'parent' product. This allows unique products that share similar traits to share description text and prevents dead links from deleted product pages, improving SEO. Yubi's interface saves sellers time by letting them create unique variants quickly and it even provides merchants the option to have variants deleted automatically after they're purchased. It also includes two custom theme app blocks, one to replace the standard, text-based variant picker on their product pages with a grid of thumbnail images, and the other to display information unique to the selected variant.",
@@ -36,6 +77,7 @@
       "NextJS",
       "React",
       "Sass",
-      "ThreeJS"    ]
+      "ThreeJS"
+    ]
   }
 ]
