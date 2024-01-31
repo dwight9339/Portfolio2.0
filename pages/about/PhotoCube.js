@@ -5,10 +5,10 @@ import { TextureLoader } from "three";
 const Cube = () => {
   const mesh = useRef();
   const maps = useLoader(TextureLoader, [
-    "https://i.imgur.com/4tCLfEf.jpg?1",
-    "https://i.imgur.com/377Hy7y.jpg?1",
-    "https://i.imgur.com/M4aeiJ9.jpg",
-    "https://i.imgur.com/PSwsFqo.png?1"
+    "https://i.imgur.com/XDMXSbW.jpg",
+    "https://i.imgur.com/XDMXSbW.jpg",
+    "https://i.imgur.com/XDMXSbW.jpg",
+    "https://i.imgur.com/XDMXSbW.jpg"
   ]);
 
   useFrame((state, delta) => {
