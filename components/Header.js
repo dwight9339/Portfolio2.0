@@ -39,35 +39,33 @@ const Header = () => {
     <header className={headerClass}>
       <div className={logoContainer}>
         <Link href="/">
-          <a>
             <Image 
               src="/images/mylogo.svg" 
-              width="200px"
-              height="100px"
+              width={200}
+              height={100}
               alt="David White logo"
             />
-          </a>
         </Link>  
       </div>
       <nav className={navbar}>
         <div className={navItem}>
           <Link href="/projects">
-            <a>Projects</a>
+            Projects
           </Link>
         </div>
         <div className={navItem}>
           <Link href="/blog">
-            <a>Blog</a>
+            Blog
           </Link>
         </div>
         <div className={navItem}>
           <Link href="/about">
-            <a>About</a>
+            About
           </Link>
         </div>
         <div className={navItem}>
           <Link href="/contact">
-            <a>Contact</a>
+            Contact
           </Link>
         </div>
       </nav>

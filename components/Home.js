@@ -20,7 +20,7 @@ const Home = () => {
           />
         </div>
         <p>
-          Check out the <Link href="/projects"><a>projects</a></Link> page 
+          Check out the <Link href="/projects">projects</Link> page 
           to see some things that I&apos;ve worked on.
         </p>
         <div>
@@ -31,7 +31,7 @@ const Home = () => {
           />
         </div>
         <p>
-          Check out my <Link href="/blog"><a>blog</a></Link>.
+          Check out my <Link href="/blog">blog</Link>.
         </p>
         <div>
           <Image
@@ -42,7 +42,7 @@ const Home = () => {
         </div>
         <p>
           You can learn a little more about me and find links to my socials 
-          over on the <Link href="/about"><a>about</a></Link> page.
+          over on the <Link href="/about">about</Link> page.
         </p>
         <div>
           <Image
@@ -53,7 +53,7 @@ const Home = () => {
         </div>
         <p>
           To drop me a line, you can use the form on 
-          the <Link href="/about"><a>contact</a></Link> page 
+          the <Link href="/about">contact</Link> page 
           or email me at <a href="mailto:david@david-white.dev">david@david-white.dev</a>.
         </p>
       </div>
